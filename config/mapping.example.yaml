@@ -1,0 +1,24 @@
+app:
+  name: 字段映射示例 App
+period:
+  start: "2025-02-01"
+  end: "2025-02-07"
+sources:
+  files:
+    - id: mapped-file
+      path: ../examples/columns-mapped.csv
+      kind: android
+      columns:
+        source: 反馈来源
+        platform: 反馈渠道
+        date: 反馈日期
+        rating: 星级
+        title: 主题
+        text: 反馈正文
+        url: 出处
+analysis:
+  mode: generic
+  rules_file: rules.generic.yaml
+output:
+  directory: ../outputs/mapping
+  formats: [html, markdown, xlsx]

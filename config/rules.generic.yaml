@@ -1,0 +1,90 @@
+version: 1
+rules:
+  negative_rating_max: 3
+  min_cluster_size: 1
+  max_quotes_per_issue: 2
+  min_quote_chars: 4
+  max_quote_chars: 240
+  prefer_negative_quotes: true
+  unclassified_warning_ratio: 0.30
+  unclassified_warning_text: "High unclassified ratio; review the custom category keywords"
+  low_information_patterns:
+    - '^[好棒不错还行一般]+[。!！.？?\s]*$'
+  metrics:
+    feedback_rate: "Distinct matched records / all records"
+    negative_feedback_rate: "Matched negative records / all negative app-store records"
+    overall_negative_rate: "Negative app-store records / app-store records with valid 1–5 ratings"
+categories:
+  - key: account
+    code: A
+    name: 账号
+    module_title: 账号与登录
+    order: 1
+    requires_any: [账号, 登录, 登陆, 注册, 验证码, 密码, 绑定, login, account]
+    issues:
+      - key: login_failure
+        name: 登录或验证失败
+        keywords: [无法, 失败, 不了, 异常, 收不到, 错误, failed, error]
+        exclude: [已经恢复正常, 问题已解决]
+      - key: account_request
+        name: 账号功能建议
+        keywords: [建议, 希望, 能否, 能不能]
+  - key: performance
+    code: P
+    name: 性能
+    module_title: 稳定性与性能
+    order: 2
+    issues:
+      - key: stability
+        name: 闪退或崩溃
+        keywords: [闪退, 崩溃, 卡死, crash]
+        exclude: [没有闪退, 不再闪退, 不再崩溃]
+      - key: speed
+        name: 卡顿或加载缓慢
+        keywords: [卡顿, 加载慢, 加载很慢, 响应慢, 很卡, 卡住, lag]
+      - key: resources
+        name: 耗电或资源占用
+        keywords: [耗电, 发热, 占内存, 内存占用, 电量]
+  - key: payment
+    code: M
+    name: 付费
+    module_title: 支付与订阅
+    order: 3
+    requires_any: [支付, 付费, 充值, 扣款, 扣费, 续费, 退款, 会员, payment, subscription]
+    issues:
+      - key: payment_failure
+        name: 支付或权益异常
+        keywords: [失败, 异常, 未到账, 没到账, 未生效, 没生效, 不生效]
+      - key: renewal
+        name: 自动续费或扣款反馈
+        keywords: [自动续费, 自动扣款, 重复扣款, 未授权, 被扣费]
+      - key: refund
+        name: 退款处理反馈
+        keywords: [退款, 退费]
+        require_any: [失败, 拒绝, 未到账, 没到账, 迟迟, 无法]
+  - key: search
+    code: S
+    name: 搜索
+    module_title: 搜索体验
+    order: 4
+    requires_any: [搜索, 检索, 搜不到, 搜不出, search]
+    issues:
+      - key: search_failure
+        name: 搜索无结果或结果异常
+        keywords: [搜不到, 搜不出, 无结果, 没有结果, 搜索失败, 结果不对, 错误]
+      - key: search_request
+        name: 搜索功能建议
+        keywords: [建议, 希望, 能否, 能不能]
+  - key: experience
+    code: E
+    name: 体验
+    module_title: 界面与功能建议
+    order: 5
+    issues:
+      - key: interface
+        name: 界面交互反馈
+        keywords: [按钮, 界面, 布局, 字体, 深色模式, 夜间模式]
+        require_any: [找不到, 难用, 异常, 建议, 希望, 增加, 恢复]
+      - key: feature_request
+        name: 功能建议
+        keywords: [希望增加, 建议增加, 建议支持, 希望支持, 建议恢复]

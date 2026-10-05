@@ -1,0 +1,15 @@
+# Optional specialist profile. P/W/M/D/N module routing is implemented in
+# analysis/dynamic.py; this file configures thresholds, not arbitrary modules.
+version: 1
+rules:
+  negative_rating_max: 3
+  max_quotes_per_issue: 2
+  min_quote_chars: 4
+  max_quote_chars: 240
+  prefer_negative_quotes: true
+  unclassified_warning_ratio: 0.30
+  media_report_quality: true
+  low_information_patterns:
+    - '^[好棒不错还行一般]+[。!！.？?\s]*$'
+# Named media routing profile, not fixed secondary issue labels.
+categories: []

@@ -1,0 +1,21 @@
+# Optional specialist profile; all inputs are fictional.
+app:
+  name: 示例媒体 App
+period:
+  timezone: Asia/Shanghai
+  start: "2025-02-01"
+  end: "2025-02-07"
+sources:
+  files:
+    - id: multi-source-demo
+      path: ../examples/reviews.csv
+      kind: external
+analysis:
+  mode: media
+  rules_file: rules.media.yaml
+output:
+  directory: ../outputs/media
+  formats: [html, markdown, xlsx]
+privacy:
+  redact_contacts: true
+  include_source_urls: false

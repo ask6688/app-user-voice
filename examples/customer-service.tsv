@@ -1,0 +1,11 @@
+source	platform	date	rating	title	text	url
+customer_service	support	2025-02-01		登录咨询	"用户：登录后又回到登录页。
+客服：请先尝试重新打开应用。
+用户：“重新打开后还是一样。”"	https://example.invalid/reviews/c1
+customer_service	support	2025-02-03		订阅咨询	用户咨询重复扣费的处理方式，希望有清楚的查询入口。	https://example.invalid/reviews/c2
+customer_service	support	2025-02-04		播放咨询	用户反馈播放过程中出现黑屏，声音仍然正常。	https://example.invalid/reviews/c3
+customer_service	support	2025-02-07		下载咨询	"用户：后台下载没有完成。
+“希望任务失败时能告诉我原因。”"	https://example.invalid/reviews/c4
+customer_service	support	2025-02-07		性能咨询	打开任务列表有明显延迟，滚动时偶尔卡住。	https://example.invalid/reviews/c5
+customer_service	support	2025-02-08		范围外记录	此条用于验证时间过滤。	https://example.invalid/reviews/c-out
+customer_service	support			缺日期记录	此条用于验证缺日期告警与排除规则。	https://example.invalid/reviews/c-no-date

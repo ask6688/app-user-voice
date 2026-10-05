@@ -1,0 +1,8 @@
+source,platform,date,rating,title,text,url
+external,forum_a,2025-02-01,,下载体验讨论,示例应用在后台下载时偶尔暂停，恢复后需要重新开始。,https://example.invalid/reviews/e1
+external,forum_b,2025-02-02,,登录体验讨论,有帖子讨论验证码等待时间较长的问题。,https://example.invalid/reviews/e2
+external,forum_a,2025-02-04,,付费说明讨论,订阅价格和权益说明可以更直观一些。,https://example.invalid/reviews/e3
+external,forum_c,2025-02-06,,播放体验讨论,"“暂停后继续播放，会先跳回前面的画面。”
+希望改善进度恢复。",https://example.invalid/reviews/e4
+external,forum_b,2025-02-07,,正向体验讨论,新版界面清晰，查找下载任务更方便。,https://example.invalid/reviews/e5
+external,forum_a,2025-01-30,,范围外记录,此条用于验证时间过滤。,https://example.invalid/reviews/e-out

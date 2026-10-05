@@ -1,0 +1,43 @@
+# All example feedback is fictional. Run this file unchanged for a local demo.
+# For your own App, replace every demo file source and set your reporting period.
+app:
+  name: 示例 App
+  company: ""
+  ios_app_id: ""
+period:
+  timezone: Asia/Shanghai
+  last_complete_days: 7
+  start: "2025-02-01"
+  end: "2025-02-07"
+sources:
+  files:
+    - id: ios-demo
+      path: examples/ios.csv
+      kind: ios
+    - id: android-demo
+      path: examples/android.csv
+      kind: android
+    - id: community-demo
+      path: examples/external.csv
+      kind: external
+    - id: support-demo
+      path: examples/customer-service.tsv
+      kind: customer_service
+  qimai:
+    enabled: false
+    platforms: [ios, android]
+    country: cn
+    android_app_id: ""
+    android_channels: [oppo, vivo, huawei, xiaomi, meizu]
+analysis:
+  mode: generic
+  rules_file: config/rules.generic.yaml
+output:
+  directory: outputs
+  formats: [html, markdown, xlsx]
+  max_audit_rows: 5
+privacy:
+  redact_contacts: true
+  include_source_urls: false
+notifications:
+  enabled: false

@@ -1,0 +1,12 @@
+source,platform,date,rating,title,text,url
+android,market_a,2025-02-01,2,下载缓慢,下载速度变慢，希望优化。,https://example.invalid/reviews/a1
+android,market_b,2025-02-01,2,下载缓慢,下载速度变慢，希望优化。,https://example.invalid/reviews/a2
+android,market_a,2025-02-02,1,无法登录,登录按钮一直转圈，无法进入首页。,https://example.invalid/reviews/a3
+android,market_c,2025-02-03,2,播放问题,部分视频只有声音没有画面，切换清晰度后恢复。,https://example.invalid/reviews/a4
+android,market_b,2025-02-04,3,订阅与退款,希望在订阅页面直接说明退款流程。,https://example.invalid/reviews/a5
+android,market_c,2025-02-05,1,闪退反馈,"点击下载列表后应用闪退。
+“进度看不到，也不知道任务是否继续。”",https://example.invalid/reviews/a6
+android,market_a,2025-02-06,5,稳定性提升,后台下载终于不会中断了，这个改进很实用。,https://example.invalid/reviews/a7
+android,market_b,2025-02-07,,使用建议,希望能按文件类型筛选任务。,https://example.invalid/reviews/a8
+android,market_a,2025-02-01,2,下载缓慢,下载速度变慢，希望优化。,https://example.invalid/reviews/a1-duplicate
+android,market_c,2025-02-08,1,范围外记录,此条用于验证时间过滤。,https://example.invalid/reviews/a-out
