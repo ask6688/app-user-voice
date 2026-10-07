@@ -11,29 +11,31 @@ from __future__ import annotations
 
 import re
 
+from ..semantics import concept_name
+
 
 MODULES = {
     "playback": {
         "code": "P",
-        "name": "播放",
+        "name": concept_name("playback"),
         "module_title": "播放相关",
         "order": 1,
     },
     "web_search": {
         "code": "W",
-        "name": "网页浏览与搜索",
+        "name": concept_name("web_search"),
         "module_title": "网页浏览＆搜索相关",
         "order": 2,
     },
     "member": {
         "code": "M",
-        "name": "会员",
+        "name": concept_name("member"),
         "module_title": "会员相关",
         "order": 3,
     },
     "download": {
         "code": "D",
-        "name": "下载",
+        "name": concept_name("download"),
         "module_title": "下载相关",
         "order": 4,
     },
@@ -155,22 +157,4 @@ PLAY_SYMPTOM = re.compile(
     r"(?:播放|视频|看剧).{0,20}"
     r"(?:卡|失败|不了|黑屏|缓冲|打不开)"
 )
-
-
-SEMANTIC_REPLACEMENTS = [
-    ("自动续期", "自动续费"),
-    ("扣钱", "扣款"),
-    ("扣费", "扣款"),
-    ("播放不了", "无法播放"),
-    ("不能播放", "无法播放"),
-    ("播不了", "无法播放"),
-    ("下载不了", "无法下载"),
-    ("不能下载", "无法下载"),
-    ("下不了", "无法下载"),
-    ("很卡", "卡顿"),
-    ("太卡", "卡顿"),
-    ("搜不到", "搜索不到"),
-    ("搜索不了", "搜索失败"),
-]
-
 

@@ -111,3 +111,11 @@ python scripts/check_public_candidate.py .
 ```
 
 运行数据、报告、登录状态和本地配置不属于公开文件；明确提交范围见 [PUBLIC_FILES.txt](PUBLIC_FILES.txt)。项目采用 [MIT License](LICENSE)；[公开范围与迁移说明](docs/PUBLIC_CANDIDATE.md)。
+
+## 备注：与 App Feedback Trends 的关系
+
+本项目与 [app-feedback-trends](https://github.com/ask6688/app-feedback-trends) 保持独立，协作范围如下：
+
+- **共同维护**：概念命名、部分同义表达和回归案例；各仓库保存自己的版本化快照，运行时不依赖对方。快照维护方式见 [使用指南](docs/USAGE.md#语义快照维护)。
+- **分别判断**：本项目发现本周期的具体问题和建议；Trend 监测预定义 Topic 的长期变化。分类、去重和报告规则分别维护；“视频播放很流畅”可进入 Trend 的播放主题，但不进入本项目 `media` 模式的问题分析。
+- **指标不同**：Trend 的相关差评占比以同期全量市场评论为分母；本项目的问题差评占比以本期商店差评为分母。同步词义和案例不代表统一分析口径。

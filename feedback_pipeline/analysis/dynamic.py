@@ -20,6 +20,7 @@ from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 
 from . import dynamic_base as base
+from ..semantics import alias_pairs
 
 
 MODULES = base.MODULES
@@ -321,23 +322,18 @@ def semantic_normalize(text: str, module: str | None = None) -> str:
         ("帮我退款", "退款"),
 
         # 播放
-        ("播放不了", "无法播放"),
-        ("不能播放", "无法播放"),
-        ("播不了", "无法播放"),
+        *alias_pairs("playback_failure"),
         ("播放失败", "无法播放"),
         ("观看不了", "无法播放"),
         ("视频无法播放", "无法播放"),
 
 
         # 下载
-        ("下载不了", "无法下载"),
-        ("不能下载", "无法下载"),
-        ("下不了", "无法下载"),
+        *alias_pairs("download_failure"),
         ("下载失败", "无法下载"),
 
         # 搜索
-        ("搜不到", "搜索不到"),
-        ("搜索不了", "搜索失败"),
+        *alias_pairs("search_failure"),
 
         # 性能
         ("很卡", "卡顿"),
@@ -1841,5 +1837,4 @@ def build_dynamic_issues(assignments, negative_ids):
                 issue["quotes"] = valid_quotes
 
     return issues, backends
-
 

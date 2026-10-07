@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id": "positive-playback", "text": "视频播放很流畅", "title": "", "source": "ios", "rating": 5, "topic_matches": ["播放"], "route_modules": [], "issue_modules": []},
+    {"id": "playback-failure", "text": "视频无法播放", "title": "", "source": "ios", "rating": 3, "topic_matches": ["播放"], "route_modules": ["playback"], "issue_modules": ["playback"]},
+    {"id": "update-playback", "text": "更新之后视频播放不了", "title": "", "source": "ios", "rating": 3, "topic_matches": ["播放"], "route_modules": ["update"], "issue_modules": ["update"]},
+    {"id": "renewal-charge", "text": "自动续费被扣款", "title": "", "source": "ios", "rating": 3, "topic_matches": [], "route_modules": ["member"], "issue_modules": ["member"]},
+    {"id": "advertising", "text": "广告太多", "title": "", "source": "ios", "rating": 3, "topic_matches": ["广告"], "route_modules": [], "issue_modules": []},
+    {"id": "positive-download", "text": "下载速度很快", "title": "", "source": "ios", "rating": 5, "topic_matches": ["下载"], "route_modules": [], "issue_modules": []},
+    {"id": "cannot-play", "text": "不能播放", "title": "", "source": "ios", "rating": 3, "topic_matches": ["播放"], "route_modules": ["playback"], "issue_modules": ["playback"]},
+    {"id": "browser-playback", "text": "浏览器里视频无法播放", "title": "", "source": "ios", "rating": 3, "topic_matches": ["播放"], "route_modules": ["playback"], "issue_modules": ["playback"]},
+    {"id": "subtitle-request", "text": "希望增加字幕", "title": "", "source": "ios", "rating": 3, "topic_matches": ["播放"], "route_modules": ["playback"], "issue_modules": []}
+  ]
+}

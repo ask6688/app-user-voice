@@ -33,6 +33,8 @@ feedback_pipeline/config.py
 feedback_pipeline/customer_service.py
 feedback_pipeline/exporters.py
 feedback_pipeline/report.py
+feedback_pipeline/semantic_definitions.json
+feedback_pipeline/semantics.py
 feedback_pipeline/sources.py
 package-lock.json
 package.json
@@ -40,6 +42,7 @@ requirements.txt
 run_weekly_report.py
 scripts/check_public_candidate.py
 scripts/fetch-qimai-comments.mjs
+scripts/sync_semantics.py
 scripts/validate_download.py
 src/qimai/browser-automation.mjs
 src/utils/credentials.mjs
@@ -51,6 +54,9 @@ tests/qimai-browser-reuse.mjs
 tests/qimai-config.mjs
 tests/qimai-export-state-machine.mjs
 tests/qimai-login-state.mjs
+tests/semantic_cases.json
 tests/test_analysis_api.py
 tests/test_local_pipeline.py
 tests/test_privacy.py
+tests/test_semantic_compat.py
+tests/test_semantic_sync.py

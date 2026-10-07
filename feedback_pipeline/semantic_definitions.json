@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "concepts": {
+    "playback": {"name": "播放", "description": "音视频播放、显示与播放控制；是否构成问题由消费者判断。"},
+    "download": {"name": "下载", "description": "文件或资源的下载与传输体验；不规定安装、上传等边界。"},
+    "web_search": {"name": "网页浏览与搜索", "description": "网页访问与搜索能力；搜索对象和最终归属由业务规则判断。"},
+    "member": {"name": "会员", "description": "订阅、付费会员及其权益；不规定扣款争议或故障归因。"},
+    "update": {"name": "更新", "description": "产品版本更新及相关反馈；不规定版本优先路由。"},
+    "advertising": {"name": "广告", "description": "广告与推广展示；正常导航和支付弹窗由业务规则区分。"},
+    "risk_control": {"name": "风控", "description": "审核、限制与风险控制相关概念；资源、账号等适用范围由 profile 决定。"}
+  },
+  "aliases": {
+    "playback_failure": [
+      ["播放不了", "无法播放"],
+      ["不能播放", "无法播放"],
+      ["播不了", "无法播放"]
+    ],
+    "download_failure": [
+      ["下载不了", "无法下载"],
+      ["不能下载", "无法下载"],
+      ["下不了", "无法下载"]
+    ],
+    "search_failure": [
+      ["搜不到", "搜索不到"],
+      ["搜索不了", "搜索失败"]
+    ]
+  }
+}

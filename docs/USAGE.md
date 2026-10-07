@@ -145,6 +145,24 @@ sources:
 
 浏览器下载放在 `.playwright/`，专用登录 Profile 在 `.browser/`，原始导出在 `data/raw/`，诊断在 `outputs/qimai/`，这些均不提交。程序断开连接后保留专用登录浏览器，不自动关闭它。
 
+## 语义快照维护
+
+[semantic_definitions.json](../feedback_pipeline/semantic_definitions.json) 保存版本化的公共概念与同义表达快照，随仓库发布，单独 clone 即可运行。它不决定最终分类，也不把 `media` 变为任意模块的通用引擎：当前仍使用上述五个模块。三组 alias 分别表示播放失败、下载失败和搜索失败，仍在本项目原有的媒体聚类阶段使用，替换顺序和路由之后的调用位置保留。快照不会自动接入另一个项目的分类、原文或去重键；各消费者继续保留自己的上下文规则。概念中出现广告、风控等名称，不代表本项目新增了这些模块。
+
+需要同步到另一个项目时，显式指定快照目标；默认只比较字节，发现差异返回非零状态，只有加 `--write` 才写入：
+
+```bash
+python scripts/sync_semantics.py --target ../app-feedback-trends/trendlib/semantic_definitions.json --cases-target ../app-feedback-trends/tests/semantic_cases.json
+# 核对差异后，再显式同步：
+python scripts/sync_semantics.py --target ../app-feedback-trends/trendlib/semantic_definitions.json --cases-target ../app-feedback-trends/tests/semantic_cases.json --write
+```
+
+同步命令打印版本和 SHA-256；运行分析时只读取各仓库自己的快照，不跨仓库导入或联网同步。同步定义不等于接受分类变化，更新后仍需运行各项目的兼容性测试。
+
+Trend 当前保留同一份定义快照及其版本，不把 alias 全局应用到分类输入；默认 preset 仍使用自己的内置规则。共同案例分别声明 `topic_matches`、`route_modules` 和 `issue_modules`，各项目只验证自己的预期。
+
+兼容性测试会对照提交 `03d22063f0ef72ff31eb31e0cca3829052a5f810` 的旧实现；普通完整 clone 可运行该对照，浅克隆缺少此提交时会明确跳过历史对照，仍运行当前规则案例。
+
 ## 本地检查
 
 ```bash
